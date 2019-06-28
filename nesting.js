@@ -50,7 +50,32 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+// long version
+// function employeeUpdater() {
+//   let updatedEmployees = employees.filter(function(el, i, arr) {
+//     return el.firstName !== 'Theo'
+//   })
+//   let mappedEmployees = updatedEmployees.map(function(el) {
+//     if (el.firstName == 'Lorie') {
+//        el.department = 'HR'
+//     } return el
+//   })
+//   return mappedEmployees
+// }
+// employeeUpdater()
+
+// short version
+function employeeUpdater() {
+  let updatedEmployees = employees.filter(function(el, i, arr) {
+    return el.firstName !== 'Theo'
+  }).map(function(el) {
+    if (el.firstName == 'Lorie') {
+       el.department = 'HR'
+    } return el
+  })
+  return updatedEmployees
+}
+employeeUpdater()
 
 
 
@@ -68,7 +93,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] === arr[j] && i !== j) {
+        arr.splice(i, 1)
+      }
+    }
+  }
+  return arr
+}
 
 
 
