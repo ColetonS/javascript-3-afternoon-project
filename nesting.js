@@ -96,11 +96,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 function removeDuplicates(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length; j++) {
-      if (arr[i] === arr[j] && i !== j) {
-        arr.splice(i, 1)
+      for (let k = 0; k < arr.length; k++) {
+        if (arr[i] === arr[j] && i !== j) {
+          arr.splice(i, 1)} else {
+            if (arr[i] === arr[k] && i !== k) {
+              arr.splice(i, 1)
+            }
+          }
+        }
       }
     }
-  }
   return arr
 }
 
@@ -131,8 +136,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -172,8 +177,12 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
-
+function recordCleaner(obj) {
+  for (i = 0; i < obj.accidents.length; i++){
+    obj.accidents[i].atFaultForAccident = false
+  }
+  return myCar
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -191,6 +200,17 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper(arr) {
+  for(var i = 0; i < arr.length; i++) {
+    for(var j = 0; j < arr[i].length; j++){
+        if (arr[i][j] % 2 == 0) {
+          arr[i][j] = 'even'
+        } else {
+          arr[i][j] = 'odd'
+        }
+    }
+}
+  return arr
+}
 
 
