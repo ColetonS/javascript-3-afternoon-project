@@ -96,16 +96,11 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 function removeDuplicates(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length; j++) {
-      for (let k = 0; k < arr.length; k++) {
-        if (arr[i] === arr[j] && i !== j) {
-          arr.splice(i, 1)} else {
-            if (arr[i] === arr[k] && i !== k) {
-              arr.splice(i, 1)
-            }
-          }
-        }
+      if (arr[i] === arr[j] && i !== j) {
+        arr.splice(j, 1)
       }
-    }
+}
+  }
   return arr
 }
 

@@ -53,7 +53,10 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+function totalPopulation(obj) {
+  let {utah, california, texas, arizona} = obj
+  return utah + california + texas + arizona
+}
 
 
 
@@ -67,7 +70,13 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+
+function ingredients(obj) {
+  let newArr = []
+  let {carb, fat, protein} = obj
+  newArr.push(carb, fat, protein)
+  return newArr
+}
 
 
 
